@@ -1,7 +1,6 @@
 # Programación Web 2
 
-## Tema: JavaScript
+## Tema: JavaScript Laboratorio 3
 
 ## Integrantes:
-- Renzo Geomar Mamani Quispe  
 - Sergio Emilio Estrada Arce
