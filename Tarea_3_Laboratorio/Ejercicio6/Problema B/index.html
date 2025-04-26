@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Operaciones Dinámicas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Calculadora Dinámica</h2>
+
+  <input type="number" id="a" placeholder="Valor A">
+  <input type="number" id="b" placeholder="Valor B">
+
+  <select id="tipoOperacion" onchange="actualizarOperadores()">
+    <option value="aritmetica">Aritmética</option>
+    <option value="logica">Lógica</option>
+    <option value="bitwise">Bit a bit</option>
+  </select>
+
+  <select id="operador">
+    <!-- se llenará dinámicamente -->
+  </select>
+
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
