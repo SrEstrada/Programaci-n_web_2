@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+    background-color: #e8f0fe;
+  }
+  
+  h1 {
+    color: #222;
+  }
+  
+  input {
+    padding: 8px;
+    width: 250px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d62828;
+  }
+  
