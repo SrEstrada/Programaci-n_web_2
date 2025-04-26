@@ -4,11 +4,11 @@ function calcularDias() {
     const anioActual = hoy.getFullYear(); // Año actual
   
     // Creamos una fecha del 15 de agosto de este año
-    let diaArequipa = new Date(anioActual, 7, 15); // Mes 7 es agosto porque enero es 0
+    let diaArequipa = new Date(anioActual, 8, 15); // Mes 7 es agosto porque enero es 0
   
     // Si ya pasó el 15 de agosto este año, se calcula para el próximo
     if (hoy > diaArequipa) {
-      diaArequipa = new Date(anioActual + 1, 7, 15);
+      diaArequipa = new Date(anioActual + 1, 8, 15);
     }
   
     // Calculamos la diferencia en milisegundos y lo convertimos a días
