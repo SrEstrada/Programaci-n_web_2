@@ -2,22 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tabla dinámica</title>
+  <title>Tabla Dinámica</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Crear tabla y sumar valores</h1>
+
+  <h2>Crear Tabla de Valores</h2>
 
   <form id="formTabla">
-    <label for="cantidad">¿Cuántos valores tendrá la tabla?</label>
-    <input type="number" id="cantidad" min="1" required>
-    <button type="submit">Crear tabla</button>
+    <input type="number" id="filas" placeholder="Número de filas" required>
+    <input type="number" id="columnas" placeholder="Número de columnas" required>
+    <button type="submit">Crear Tabla</button>
   </form>
 
   <div id="tablaContainer"></div>
 
-  <button id="btnSumar" style="display: none;">Calcular Suma</button>
-  <div id="resultado"></div>
+  <button id="btnSumar" style="display:none;">Sumar Valores</button>
+
+  <p id="resultado"></p>
 
   <script src="script.js"></script>
 </body>
