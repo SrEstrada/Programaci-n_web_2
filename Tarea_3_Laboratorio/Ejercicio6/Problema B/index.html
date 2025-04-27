@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Operaciones Dinámicas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Dinámicas</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-  <h2>Calculadora Dinámica</h2>
+    <div class="container">
+        <h1>Calculadora Dinámica</h1>
 
-  <input type="number" id="a" placeholder="Valor A">
-  <input type="number" id="b" placeholder="Valor B">
+        <!-- Selector para el tipo de operación -->
+        <label for="tipoOperacion">Tipo de Operación:</label>
+        <select id="tipoOperacion">
+            <option value="aritmetica">Aritmética</option>
+            <option value="logica">Lógica</option>
+            <option value="bits">Bits</option>
+        </select>
 
-  <select id="tipoOperacion" onchange="actualizarOperadores()">
-    <option value="aritmetica">Aritmética</option>
-    <option value="logica">Lógica</option>
-    <option value="bitwise">Bit a bit</option>
-  </select>
+        <!-- Selector para operación específica -->
+        <label for="operacion">Operación:</label>
+        <select id="operacion">
+            <!-- Opciones serán cargadas dinámicamente -->
+        </select>
 
-  <select id="operador">
-    <!-- se llenará dinámicamente -->
-  </select>
+        <!-- Campos de entrada -->
+        <div id="entradas">
+            <input type="text" id="valor1" placeholder="Valor 1">
+            <input type="text" id="valor2" placeholder="Valor 2">
+        </div>
 
-  <button onclick="calcular()">Calcular</button>
+        <!-- Botón para calcular -->
+        <button id="calcularBtn">Calcular</button>
 
-  <p id="resultado"></p>
+        <!-- Resultado -->
+        <div id="resultado"></div>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="pagina2.js"></script>
 </body>
 </html>
