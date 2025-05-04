@@ -1,0 +1,1 @@
+Hola desde el archivo TXT. Este contenido fue cargado con XMLHttpRequest y callback.
