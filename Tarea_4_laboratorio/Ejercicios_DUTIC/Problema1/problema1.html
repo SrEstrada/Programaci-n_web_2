@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Problema 1 - Comparación de Regiones</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Comparación de Casos COVID por Región</h1>
+
+  <p>Selecciona las regiones que deseas comparar:</p>
+  <div id="checkbox-regiones">
+    <label><input type="checkbox" value="Amazonas"> Amazonas</label><br>
+    <label><input type="checkbox" value="Ancash"> Ancash</label><br>
+    <label><input type="checkbox" value="Apurimac"> Apurímac</label><br>
+    <label><input type="checkbox" value="Arequipa"> Arequipa</label><br>
+    <label><input type="checkbox" value="Ayacucho"> Ayacucho</label><br>
+    <label><input type="checkbox" value="Cajamarca"> Cajamarca</label><br>
+    <label><input type="checkbox" value="Callao"> Callao</label><br>
+    <label><input type="checkbox" value="Cusco"> Cusco</label><br>
+    <label><input type="checkbox" value="Huancavelica"> Huancavelica</label><br>
+    <label><input type="checkbox" value="Huanuco"> Huánuco</label><br>
+    <label><input type="checkbox" value="Ica"> Ica</label><br>
+    <label><input type="checkbox" value="Junin"> Junín</label><br>
+    <label><input type="checkbox" value="La Libertad"> La Libertad</label><br>
+    <label><input type="checkbox" value="Lambayeque"> Lambayeque</label><br>
+    <label><input type="checkbox" value="Lima"> Lima</label><br>
+    <label><input type="checkbox" value="Loreto"> Loreto</label><br>
+    <label><input type="checkbox" value="Madre de Dios"> Madre de Dios</label><br>
+    <label><input type="checkbox" value="Moquegua"> Moquegua</label><br>
+    <label><input type="checkbox" value="Pasco"> Pasco</label><br>
+    <label><input type="checkbox" value="Piura"> Piura</label><br>
+    <label><input type="checkbox" value="Puno"> Puno</label><br>
+    <label><input type="checkbox" value="San Martin"> San Martín</label><br>
+    <label><input type="checkbox" value="Tacna"> Tacna</label><br>
+    <label><input type="checkbox" value="Tumbes"> Tumbes</label><br>
+    <label><input type="checkbox" value="Ucayali"> Ucayali</label><br>
+  </div>
+
+  <br>
+  <button id="generar">Generar gráficos</button>
+
+  <div class="graficos">
+    <h3>Confirmados</h3>
+    <canvas id="grafico-confirmed"></canvas>
+
+    <h3>Recuperados</h3>
+    <canvas id="grafico-recover"></canvas>
+
+    <h3>Fallecidos</h3>
+    <canvas id="grafico-death"></canvas>
+
+    <h3>Hospitalizados</h3>
+    <canvas id="grafico-hospital"></canvas>
+
+    <h3>UCI</h3>
+    <canvas id="grafico-hospitaluci"></canvas>
+
+    <h3>Sin Hospitalización</h3>
+    <canvas id="grafico-nohospital"></canvas>
+  </div>
+
+  <script src="problema1.js"></script>
+</body>
+</html>
