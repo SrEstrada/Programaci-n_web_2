@@ -64,10 +64,17 @@ class Picture:
 
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    """ Devuelve una nueva figura repitiendo la figura actual hacia abajo
+        la cantidad de veces que indique el valor de n """
+    nueva_img = []
+    for _ in range(n):
+        nueva_img.extend(self.img)
+    return Picture(nueva_img)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
-    """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-    o antihorario"""
-    return Picture(None)
+    """ Devuelve una figura rotada 90 grados en sentido horario """
+    # Transponer e invertir filas
+    nueva_img = [''.join([self.img[j][i] for j in range(len(self.img)-1, -1, -1)])
+                 for i in range(len(self.img[0]))]
+    return Picture(nueva_img)

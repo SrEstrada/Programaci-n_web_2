@@ -1,4 +1,4 @@
 from chessPictures import *
 from interpreter import draw
 
-draw(knight.horizontalRepeat(4))
+draw(knight.rotate())
