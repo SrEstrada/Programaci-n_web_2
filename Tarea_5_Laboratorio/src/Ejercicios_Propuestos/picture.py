@@ -44,14 +44,24 @@ class Picture:
     return Picture(nueva_img)
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
-        figura actual """
-    return Picture(None)
+    """ Devuelve una nueva figura poniendo la figura p sobre la figura actual """
+    nueva_img = []
+    for fila_p, fila_self in zip(p.img, self.img):
+        nueva_fila = ""
+        for c_p, c_self in zip(fila_p, fila_self):
+            nueva_fila += c_p if c_p != ' ' else c_self
+        nueva_img.append(nueva_fila)
+    return Picture(nueva_img)
+
   
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    nueva_img = []
+    for fila in self.img:
+        nueva_img.append(fila * n)
+    return Picture(nueva_img)
+
 
   def verticalRepeat(self, n):
     return Picture(None)
