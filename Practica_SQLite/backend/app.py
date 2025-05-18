@@ -1,26 +1,25 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 import sqlite3
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend', static_url_path='')
 
 @app.route('/api/peliculas')
 def obtener_peliculas():
-    # Ruta absoluta segura
-    ruta_base = os.path.abspath(os.path.dirname(__file__))
-    ruta_db = os.path.join(ruta_base, 'imdb.db')
-
-    # Verifica que la ruta sea correcta (DEBUG)
-    print(f"Ruta completa a la base de datos: {ruta_db}")
-
-    conexion = sqlite3.connect(ruta_db)
+    ruta_absoluta = os.path.abspath(os.path.join(os.path.dirname(__file__), 'imdb.db'))
+    conexion = sqlite3.connect(ruta_absoluta)
     cursor = conexion.cursor()
 
-    cursor.execute("SELECT * FROM peliculas")
-    peliculas = cursor.fetchall()
+    cursor.execute("SELECT id, titulo, anio, duracion FROM peliculas")
+    datos = cursor.fetchall()
 
     conexion.close()
-    return jsonify(peliculas)
+    return jsonify(datos)
+
+@app.route('/')
+def servir_html():
+    return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
+    print("Flask se está ejecutando correctamente")
     app.run(debug=True)
