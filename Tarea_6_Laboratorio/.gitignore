@@ -1,0 +1,20 @@
+# Ignorar tareas anteriores
+../Tarea_4_laboratorio/
+../Tarea_5_Laboratorio/
+
+# Ignorar la carpeta que arrastra cambios no deseados
+Laboratorio-6-P.-Web2-/
+
+# Archivos de sistema y temporales
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.db
+.env
+env/
+ENV/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
