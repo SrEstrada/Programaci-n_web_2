@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Destinos Turísticos</title>
+</head>
+<body>
+    <h1>Lista de Destinos</h1>
+    {% for destino in destinos %}
+        <div>
+            <h2>{{ destino.nombreCiudad }}</h2>
+            <p>{{ destino.descripcionCiudad }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
