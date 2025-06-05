@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Datos de Persona</h1>
+<p>
+    {{ myText }} - {{ myNumber }}  
+</p>
+<ul>
+    {% for item in myList %}
+    <li>{{ forloop.counter }}: {{ item }}</li>  
+    {% endfor %}
+</ul>
+{% endblock %}
