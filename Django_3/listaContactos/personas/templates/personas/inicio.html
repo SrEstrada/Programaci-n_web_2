@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Listado de Personas</h1>
+    
+    <!-- Botón Agregar + Buscador -->
+    <div class="d-flex justify-content-between mb-4">
+        <a href="{% url 'crear-persona' %}" class="btn btn-success">
+            <i class="fas fa-plus"></i> Agregar Persona
+        </a>
+        <form method="GET" action="{% url 'inicio' %}" class="d-flex">
+            <input 
+                type="text" 
+                name="q" 
+                class="form-control me-2" 
+                placeholder="Buscar por DNI, nombre o apellido..."
+                value="{{ request.GET.q }}"
+            >
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </form>
+    </div>
+
+    <!-- Tabla de Personas -->
+    {% if personas %}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Edad</th>
+                    <th>Donador</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.dni }}</td>
+                    <td>{{ persona.nombres }}</td>
+                    <td>{{ persona.apellidos }}</td>
+                    <td>{{ persona.edad|default:"-" }}</td>
+                    <td>
+                        {% if persona.donador %}
+                            <span class="badge bg-success">Sí</span>
+                        {% else %}
+                            <span class="badge bg-danger">No</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'editar-persona' persona.id %}" class="btn btn-sm btn-warning">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{% url 'eliminar-persona' persona.id %}" 
+                           class="btn btn-sm btn-danger"
+                           onclick="return confirm('¿Eliminar a {{ persona.nombres }}?')">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        No hay personas registradas.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,26 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container mt-4">
-    <h2 class="mb-4">Agregar Nueva Persona</h2>
-    <form method="POST" class="bg-light p-4 rounded">
+    <h2 class="mb-4">{% if editar %}Editar{% else %}Agregar{% endif %} Persona</h2>
+    <form method="POST" class="bg-light p-4 rounded shadow">
         {% csrf_token %}
+        
+        <!-- Campo DNI -->
+        <div class="mb-3">
+            <label class="form-label">DNI</label>
+            {{ form.dni }}
+            {% if form.dni.errors %}
+                <div class="text-danger">{{ form.dni.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Campo Nombres -->
         <div class="mb-3">
             <label class="form-label">Nombres</label>
             {{ form.nombres }}
         </div>
+
+        <!-- Campo Apellidos -->
         <div class="mb-3">
             <label class="form-label">Apellidos</label>
             {{ form.apellidos }}
         </div>
+
+        <!-- Campo Edad -->
         <div class="mb-3">
             <label class="form-label">Edad</label>
             {{ form.edad }}
         </div>
-        <div class="mb-3 form-check">
+
+        <!-- Campo Donador -->
+        <div class="mb-3 form-check form-switch">
             {{ form.donador }}
             <label class="form-check-label">{{ form.donador.label }}</label>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+
+        <button type="submit" class="btn btn-primary">
+            {% if editar %}Actualizar{% else %}Guardar{% endif %}
+        </button>
+        <a href="{% url 'inicio' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 {% endblock %}

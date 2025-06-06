@@ -16,9 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from personas.views import crear_persona
+from personas.views import (  # ¡Importa todas las vistas aquí!
+    inicio, 
+    crear_persona, 
+    editar_persona, 
+    eliminar_persona
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', inicio, name='inicio'),  # Cambié 'listar_personas' por 'inicio' para coincidir con tu código
     path('personas/agregar/', crear_persona, name='crear-persona'),
+    path('editar/<int:id>/', editar_persona, name='editar-persona'),
+    path('eliminar/<int:id>/', eliminar_persona, name='eliminar-persona'),
 ]
