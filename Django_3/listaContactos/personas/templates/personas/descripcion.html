@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Datos de Persona</h1>
-<p>
-    {{ myText }} - {{ myNumber }}  
-</p>
-<ul>
-    {% for item in myList %}
-    <li>{{ forloop.counter }}: {{ item }}</li>  
-    {% endfor %}
-</ul>
+<div class="container mt-4">
+    <h1 class="text-center">{{ titulo }}</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+                <th>Donador</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+            <tr>
+                <td>{{ persona.nombres }}</td>
+                <td>{{ persona.apellidos }}</td>
+                <td>{{ persona.edad|default:"No especificada" }}</td>
+                <td>
+                    {% if persona.donador %}
+                        <span class="text-success">✔</span>
+                    {% else %}
+                        <span class="text-danger">✘</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

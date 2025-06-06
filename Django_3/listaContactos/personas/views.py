@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from .models import Persona
 
-def test_template_view(request):
+def listar_personas(request):
+    personas = Persona.objects.all()  # Obtiene TODAS las personas de la BD
     context = {
-        'myText': '¡Funciona!',
-        'myNumber': 100,
-        'myList': [10, 20, 30],
+        'personas': personas,
+        'titulo': 'Listado Completo de Personas'
     }
     return render(request, 'personas/descripcion.html', context)
