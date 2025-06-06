@@ -54,9 +54,11 @@
                         <a href="{% url 'editar-persona' persona.id %}" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="{% url 'eliminar-persona' persona.id %}" 
-                           class="btn btn-sm btn-danger"
-                           onclick="return confirm('¿Eliminar a {{ persona.nombres }}?')">
+                        <a 
+                            href="{% url 'eliminar-persona' persona.id %}" 
+                            class="btn btn-sm btn-danger"
+                            onclick="return confirm('¿Seguro que quieres eliminar a {{ persona.nombres }}?')"
+                        >
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>

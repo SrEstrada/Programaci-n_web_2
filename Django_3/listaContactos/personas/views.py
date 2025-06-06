@@ -43,6 +43,7 @@ def editar_persona(request, id):
         'editar': True  # Para diferenciar entre crear/editar en el template
     })
 
-def eliminar_persona(request, id):
+def eliminar_persona(request, id):  
     persona = get_object_or_404(Persona, id=id)
     persona.delete()
+    return redirect('inicio')

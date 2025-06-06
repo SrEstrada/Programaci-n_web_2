@@ -28,5 +28,6 @@ urlpatterns = [
     path('', inicio, name='inicio'),  # Cambié 'listar_personas' por 'inicio' para coincidir con tu código
     path('personas/agregar/', crear_persona, name='crear-persona'),
     path('editar/<int:id>/', editar_persona, name='editar-persona'),
-    path('eliminar/<int:id>/', eliminar_persona, name='eliminar-persona'),
+    path('eliminar/<int:id>/', eliminar_persona, name='eliminar-persona'),  # ¡Con / al final!
+
 ]
