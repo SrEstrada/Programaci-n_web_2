@@ -16,11 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from personas.views import listar_personas
-
+from personas.views import crear_persona
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('personas/', listar_personas, name='listar-personas'),
-
+    path('personas/agregar/', crear_persona, name='crear-persona'),
 ]

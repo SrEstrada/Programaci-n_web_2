@@ -1,10 +1,13 @@
-from django.shortcuts import render
-from .models import Persona
+from django.shortcuts import render, redirect
+from .forms import PersonaForm
 
-def listar_personas(request):
-    personas = Persona.objects.all()  # Obtiene TODAS las personas de la BD
-    context = {
-        'personas': personas,
-        'titulo': 'Listado Completo de Personas'
-    }
-    return render(request, 'personas/descripcion.html', context)
+def crear_persona(request):
+    if request.method == 'POST':
+        form = PersonaForm(request.POST)
+        if form.is_valid():
+            form.save()  # Guarda en la base de datos
+            return redirect('listar-personas')  # Redirige al listado
+    else:
+        form = PersonaForm()  # Formulario vacío para GET
+
+    return render(request, 'personas/crear_persona.html', {'form': form})
