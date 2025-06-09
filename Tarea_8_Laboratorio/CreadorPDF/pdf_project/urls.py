@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import path
+from pdf_app.views import generar_pdf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('pdf/', generar_pdf, name='generar_pdf'),
 ]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if pdf_title %}{{ pdf_title }}{% else %}PDF{% endif %}</title>
+    <style>
+        body { font-family: Arial; }
+        .header { text-align: center; color: #007cae; }
+        .title { font-size: 18px; }
+        .details { margin-top: 20px; }
+        .hrItem { border-top: 1px solid #000; }
+    </style>
+</head>
+<body>
+    <div class='header'>
+        <h1>Factura #{{ invoice_number }}</h1>
+    </div>
+    <div class='details'>
+        Cliente: {{ customer_name }}<br/>
+        Monto: ${{ amount }}<br/>
+        Fecha: {{ date }}
+        <hr class='hrItem' />
+    </div>
+</body>
+</html>
