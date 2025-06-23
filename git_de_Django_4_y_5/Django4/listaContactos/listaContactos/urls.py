@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from personas.views import personasAnotherCreateView
+from personas.views import personasAnotherCreateView, personasListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('anotherAdd/', personasAnotherCreateView, name='otro_agregar'),
-
+    path('lista/', personasListView, name='lista_personas'),
 ]

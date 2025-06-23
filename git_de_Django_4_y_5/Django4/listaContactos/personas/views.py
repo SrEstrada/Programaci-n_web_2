@@ -10,3 +10,7 @@ def personasAnotherCreateView(request):
     else:
         form = RawPersonaForm()  # Formulario vacío para GET
     return render(request, 'personas/personasCreate.html', {'form': form})
+def personasListView(request):
+    queryset = Persona.objects.all()
+    context = {'object_list': queryset}
+    return render(request, 'personas/personasLista.html', context)

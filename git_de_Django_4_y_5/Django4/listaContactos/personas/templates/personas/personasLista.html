@@ -1,0 +1,7 @@
+<h1>Lista de Personas</h1>
+<ul>
+    {% for persona in object_list %}
+        <li>{{ persona.nombres }} {{ persona.apellidos }} ({{ persona.edad }} años)</li>
+    {% endfor %}
+</ul>
+<a href="/anotherAdd/">Agregar otra persona</a>
