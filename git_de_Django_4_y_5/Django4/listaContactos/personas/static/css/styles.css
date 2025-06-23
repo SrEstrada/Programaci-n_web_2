@@ -1,0 +1,144 @@
+/* personas/static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para errores de validación */
+.errorlist {
+    color: red;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.boton-lista {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.boton-lista:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la lista de personas */
+.lista-personas {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.persona-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+
+.persona-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.persona-card h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.persona-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.acciones {
+    margin-top: 10px;
+}
+
+.acciones a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.acciones .editar {
+    background-color: #007BFF;
+}
+
+.acciones .editar:hover {
+    background-color: #0056b3;
+}
+
+.acciones .eliminar {
+    background-color: #dc3545;
+}
+
+.acciones .eliminar:hover {
+    background-color: #a71d2a;
+}
+
+.titulo-lista {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.boton-agregar {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    width: 200px;
+}

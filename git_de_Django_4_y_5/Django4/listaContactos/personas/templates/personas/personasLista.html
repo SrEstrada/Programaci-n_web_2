@@ -1,7 +1,31 @@
-<h1>Lista de Personas</h1>
-<ul>
-    {% for persona in object_list %}
-        <li>{{ persona.nombres }} {{ persona.apellidos }} ({{ persona.edad }} años)</li>
-    {% endfor %}
-</ul>
-<a href="/anotherAdd/">Agregar otra persona</a>
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Personas</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1 class="titulo-lista">Lista de Personas</h1>
+    
+    <div class="lista-personas">
+        {% for persona in object_list %}
+            <div class="persona-card">
+                <h3>{{ persona.nombres }} {{ persona.apellidos }}</h3>
+                <p><strong>Edad:</strong> {{ persona.edad }} años</p>
+                <p><strong>Donador:</strong> {% if persona.donador %}Sí{% else %}No{% endif %}</p>
+                
+                <div class="acciones">
+                    <a href="#" class="editar">Editar</a>  <!-- Reemplaza # con URL de edición -->
+                    <a href="#" class="eliminar">Eliminar</a>  <!-- Reemplaza # con URL de eliminación -->
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay personas registradas.</p>
+        {% endfor %}
+    </div>
+    
+    <a href="{% url 'lista_personas' %}" class="boton-agregar">Ver lista completa</a>
+    <a href="/anotherAdd/" class="boton-agregar">Agregar nueva persona</a>
+</body>
+</html>
