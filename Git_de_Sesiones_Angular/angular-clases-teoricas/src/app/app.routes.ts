@@ -2,9 +2,13 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { Formulario } from './formulario/formulario';
+import { Hobbies } from './hobbies/hobbies';
+
 
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'about', component: About },
-  { path: 'formulario', component: Formulario }
+  { path: 'formulario', component: Formulario },
+  { path: 'hobbies', component: Hobbies }
+
 ];

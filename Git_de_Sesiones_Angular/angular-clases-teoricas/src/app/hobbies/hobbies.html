@@ -1,0 +1,11 @@
+<h2>Mis Hobbies</h2>
+
+<input type="text" [(ngModel)]="nuevoHobby" placeholder="Nuevo hobby" />
+<button (click)="agregarHobby()">Agregar</button>
+
+<ul>
+  <li *ngFor="let hobby of hobbies; let i = index">
+    {{ hobby }}
+    <button (click)="eliminarHobby(i)">❌</button>
+  </li>
+</ul>
