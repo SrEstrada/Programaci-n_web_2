@@ -4,7 +4,7 @@ import { About } from './about/about';
 import { Formulario } from './formulario/formulario';
 import { Hobbies } from './hobbies/hobbies';
 import { Posts } from './posts/posts';
-
+import { NotFound } from './not-found/not-found';
 
 
 export const routes: Routes = [
@@ -12,7 +12,8 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'formulario', component: Formulario },
   { path: 'hobbies', component: Hobbies },
-  { path: 'posts', component: Posts }
+  { path: 'posts', component: Posts },
+  { path: '**', component: NotFound }
 
 
 ];
