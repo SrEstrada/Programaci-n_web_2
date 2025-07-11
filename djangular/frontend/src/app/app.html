@@ -1,3 +1,13 @@
+<h2>Agregar Película:</h2>
+<form (ngSubmit)="addMovie()">
+  <input [(ngModel)]="newMovie.title" name="title" placeholder="Título" required>
+  <input [(ngModel)]="newMovie.desc" name="desc" placeholder="Descripción" required>
+  <input [(ngModel)]="newMovie.year" name="year" type="number" placeholder="Año" required>
+  <button type="submit">Agregar</button>
+</form>
+
+<hr>
+
 <h2>Lista de Películas:</h2>
 <ul>
   <li *ngFor="let movie of movies">

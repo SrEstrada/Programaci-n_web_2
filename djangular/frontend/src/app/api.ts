@@ -1,10 +1,8 @@
-import { Injectable, inject } from '@angular/core'; 
+import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root' 
-})
+@Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
   private baseurl = 'http://127.0.0.1:8000';
@@ -12,6 +10,12 @@ export class ApiService {
 
   getAllMovies(): Observable<any> {
     return this.http.get(this.baseurl + '/movie/', {
+      headers: this.httpHeaders
+    });
+  }
+
+  createMovie(movie: { title: string, desc: string, year: number }) {
+    return this.http.post(this.baseurl + '/movie/', movie, {
       headers: this.httpHeaders
     });
   }
