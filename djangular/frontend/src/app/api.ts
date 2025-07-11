@@ -24,4 +24,9 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
+  updateMovie(id: number, movie: { title: string, desc: string, year: number }) {
+    return this.http.put(`${this.baseurl}/movie/${id}/`, movie, {
+      headers: this.httpHeaders
+    });
+  }
 }

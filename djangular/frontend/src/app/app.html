@@ -1,9 +1,17 @@
-<h2>Agregar Película:</h2>
+<h2>{{ isEditing ? 'Editar Película:' : 'Agregar Película:' }}</h2>
+
 <form (ngSubmit)="addMovie()">
   <input [(ngModel)]="newMovie.title" name="title" placeholder="Título" required>
   <input [(ngModel)]="newMovie.desc" name="desc" placeholder="Descripción" required>
   <input [(ngModel)]="newMovie.year" name="year" type="number" placeholder="Año" required>
-  <button type="submit">Agregar</button>
+  
+  <button type="submit">
+    {{ isEditing ? 'Actualizar' : 'Agregar' }}
+  </button>
+
+  <button type="button" *ngIf="isEditing" (click)="cancelEdit()">
+    Cancelar
+  </button>
 </form>
 
 <hr>
@@ -12,8 +20,8 @@
 <ul>
   <li *ngFor="let movie of movies">
     <strong>{{ movie.title }}</strong> ({{ movie.year }})<br>
-    <em>{{ movie.desc }}</em>
+    <em>{{ movie.desc }}</em><br>
     <button (click)="deleteMovie(movie.id)">🗑️ Eliminar</button>
+    <button (click)="editMovie(movie)">✏️ Editar</button>
   </li>
 </ul>
-
