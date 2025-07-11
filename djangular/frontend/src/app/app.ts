@@ -38,4 +38,12 @@ export class App {
       error: err => console.error(err)
     });
   }
+
+  deleteMovie(id: number) {
+    this.api.deleteMovie(id).subscribe({
+      next: () => this.getMovies(),
+      error: err => console.error(err)
+    });
+  }
+
 }

@@ -13,5 +13,7 @@
   <li *ngFor="let movie of movies">
     <strong>{{ movie.title }}</strong> ({{ movie.year }})<br>
     <em>{{ movie.desc }}</em>
+    <button (click)="deleteMovie(movie.id)">🗑️ Eliminar</button>
   </li>
 </ul>
+

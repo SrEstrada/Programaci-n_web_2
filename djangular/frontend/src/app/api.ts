@@ -19,4 +19,9 @@ export class ApiService {
       headers: this.httpHeaders
     });
   }
+  deleteMovie(id: number) {
+    return this.http.delete(`${this.baseurl}/movie/${id}/`, {
+      headers: this.httpHeaders
+    });
+  }
 }
